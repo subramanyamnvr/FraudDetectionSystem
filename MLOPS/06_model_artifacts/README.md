@@ -5,6 +5,7 @@ This step stores the final outputs.
 Restaurant story:
 - this is the packed final dish with the recipe card and tasting notes
 - another kitchen can use these files to serve the same result later
+- BentoML uses these packed outputs in the next step to serve predictions as an API
 
 Files here:
 - `06_best_model.joblib`

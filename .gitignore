@@ -4,3 +4,5 @@ MLOPS/04_experiment_tracking/04_mlflow_tracking.db
 MLOPS/04_experiment_tracking/mlruns/
 mlflow.db
 mlruns/
+MLOPS/07_model_serving/.bentoml/
+MLOPS/07_model_serving/__pycache__/
