@@ -1,3 +1,4 @@
 creditcard.csv
 mlflow.db
 mlruns/
+.env

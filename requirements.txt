@@ -5,3 +5,4 @@ xgboost
 jupyter
 joblib
 mlflow
+python-dotenv
