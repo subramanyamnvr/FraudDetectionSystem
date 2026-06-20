@@ -6,3 +6,7 @@ jupyter
 joblib
 mlflow
 python-dotenv
+prefect
+dvc
+pyyaml
+pydantic-settings>=2.9.1

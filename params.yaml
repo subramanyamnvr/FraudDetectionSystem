@@ -1,0 +1,4 @@
+pipeline:
+  sample_size: 100
+  random_state: 42
+  test_size: 0.2
