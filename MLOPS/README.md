@@ -42,6 +42,10 @@ This folder groups the project by MLOps lifecycle step so the flow is easy to fo
 - `09_decide_retraining.py` reads the monitoring results and decides whether retraining should happen.
 - `09_retraining_policy.yaml` stores the simple business rules for that decision.
 
+## 10 CI CD
+- `.github/workflows/10_mlops_ci_cd.yml` automates the lifecycle in GitHub Actions.
+- `10_ci_cd/README.md` explains how the automation fits into the MLOps flow.
+
 ## Useful Commands
 - `python MLOPS/03_orchestration/03_prefect_mlops_pipeline.py`
 - `dvc repro MLOPS/05_pipeline_versioning/dvc.yaml:run_full_mlops_cycle`
