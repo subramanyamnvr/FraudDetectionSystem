@@ -1,0 +1,20 @@
+{
+  "monitoring_status": "warning",
+  "checked_rows": 40,
+  "drifted_feature_count": 19,
+  "drifted_features": [
+    "v11",
+    "v4",
+    "v14",
+    "v9",
+    "v12",
+    "v6",
+    "v10",
+    "v16",
+    "v17",
+    "v7"
+  ],
+  "average_fraud_probability": 0.0371,
+  "predicted_fraud_rate": 0.0,
+  "note": "In production, this current batch would come from live BentoML request logs or a feature pipeline."
+}

@@ -34,6 +34,14 @@ This folder groups the project by MLOps lifecycle step so the flow is easy to fo
 - `07_export_bentoml_model.py` turns the trained model artifacts into a BentoML bundle.
 - `07_bentoml_service.py` exposes a simple prediction API for serving.
 
+## 08 Monitoring
+- `08_run_monitoring_checks.py` creates a production-like batch, scores it, and checks for drift.
+- generated monitoring files show whether incoming data still looks like training data.
+
+## 09 Retraining Trigger
+- `09_decide_retraining.py` reads the monitoring results and decides whether retraining should happen.
+- `09_retraining_policy.yaml` stores the simple business rules for that decision.
+
 ## Useful Commands
 - `python MLOPS/03_orchestration/03_prefect_mlops_pipeline.py`
 - `dvc repro MLOPS/05_pipeline_versioning/dvc.yaml:run_full_mlops_cycle`
@@ -41,3 +49,5 @@ This folder groups the project by MLOps lifecycle step so the flow is easy to fo
 - `feast ui` from `MLOPS/02_feature_store/feature_repo`
 - `python MLOPS/07_model_serving/07_export_bentoml_model.py`
 - `bentoml serve MLOPS/07_model_serving/07_bentoml_service.py:FraudDetectionService`
+- `python MLOPS/08_monitoring/08_run_monitoring_checks.py`
+- `python MLOPS/09_retraining_trigger/09_decide_retraining.py`

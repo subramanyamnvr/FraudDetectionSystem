@@ -23,3 +23,4 @@ Useful endpoints after startup:
 - `GET /docs.json`
 - `POST /predict`
 - `GET /readyz`
+- `GET /metrics`
