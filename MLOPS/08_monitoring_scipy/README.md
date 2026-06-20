@@ -1,4 +1,4 @@
-# 08 Monitoring
+﻿# 08 Monitoring
 
 This step checks whether the served data still looks like the data used in training.
 
@@ -26,9 +26,10 @@ How it fits:
 - this step adds model-input monitoring so we can see whether the incoming data shape is changing
 
 Run:
-- `python MLOPS/08_monitoring/08_run_monitoring_checks.py`
+- `python MLOPS/08_monitoring_scipy/08_run_monitoring_checks.py`
 
 Outputs:
 - `08_current_scored_batch.csv` contains the current batch with predictions
 - `08_drift_report.csv` shows drift statistics for each feature
 - `08_monitoring_summary.json` gives a short summary you can explain easily
+

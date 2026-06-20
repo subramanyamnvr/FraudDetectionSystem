@@ -1,4 +1,4 @@
-name: 10 MLOps CI CD
+﻿name: 10 MLOps CI CD
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PREFECT_SERVER_ANALYTICS_ENABLED: "false"
-      BENTOML_HOME: ${{ github.workspace }}/MLOPS/07_model_serving/.bentoml
+      BENTOML_HOME: ${{ github.workspace }}/MLOPS/07_model_serving_bentoml/.bentoml
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -28,32 +28,32 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run training and tracking pipeline
-        run: python MLOPS/03_orchestration/03_prefect_mlops_pipeline.py
+        run: python MLOPS/03_orchestration_prefect/03_prefect_mlops_pipeline.py
 
       - name: Export BentoML model
-        run: python MLOPS/07_model_serving/07_export_bentoml_model.py
+        run: python MLOPS/07_model_serving_bentoml/07_export_bentoml_model.py
 
       - name: Run monitoring checks
-        run: python MLOPS/08_monitoring/08_run_monitoring_checks.py
+        run: python MLOPS/08_monitoring_scipy/08_run_monitoring_checks.py
 
       - name: Run retraining decision
-        run: python MLOPS/09_retraining_trigger/09_decide_retraining.py
+        run: python MLOPS/09_retraining_trigger_policy/09_decide_retraining.py
 
       - name: Upload generated lifecycle artifacts
         uses: actions/upload-artifact@v4
         with:
           name: mlops-lifecycle-artifacts
           path: |
-            MLOPS/06_model_artifacts
-            MLOPS/08_monitoring
-            MLOPS/09_retraining_trigger
+            MLOPS/06_model_artifacts_joblib
+            MLOPS/08_monitoring_scipy
+            MLOPS/09_retraining_trigger_policy
 
   smoke-test-bentoml-service:
     runs-on: ubuntu-latest
     needs: run-mlops-lifecycle
     env:
       PREFECT_SERVER_ANALYTICS_ENABLED: "false"
-      BENTOML_HOME: ${{ github.workspace }}/MLOPS/07_model_serving/.bentoml
+      BENTOML_HOME: ${{ github.workspace }}/MLOPS/07_model_serving_bentoml/.bentoml
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -70,12 +70,12 @@ jobs:
 
       - name: Build artifacts required for serving
         run: |
-          python MLOPS/03_orchestration/03_prefect_mlops_pipeline.py
-          python MLOPS/07_model_serving/07_export_bentoml_model.py
+          python MLOPS/03_orchestration_prefect/03_prefect_mlops_pipeline.py
+          python MLOPS/07_model_serving_bentoml/07_export_bentoml_model.py
 
       - name: Start BentoML service
         run: |
-          bentoml serve MLOPS/07_model_serving/07_bentoml_service.py:FraudDetectionService --port 3001 > bentoml.log 2>&1 &
+          bentoml serve MLOPS/07_model_serving_bentoml/07_bentoml_service.py:FraudDetectionService --port 3001 > bentoml.log 2>&1 &
           sleep 20
 
       - name: Check service endpoints
@@ -90,7 +90,7 @@ jobs:
           import pandas as pd
           import requests
 
-          row = pd.read_csv("MLOPS/01_data_versioning/01_creditcard_dataset.csv").rename(columns=str.lower).iloc[0]
+          row = pd.read_csv("MLOPS/01_data_versioning_dvc/01_creditcard_dataset.csv").rename(columns=str.lower).iloc[0]
           payload = {
               "records": [
                   {**{f"v{i}": float(row[f"v{i}"]) for i in range(1, 29)}, "amount": float(row["amount"])}
@@ -106,3 +106,4 @@ jobs:
       - name: Show BentoML logs on failure
         if: failure()
         run: cat bentoml.log
+

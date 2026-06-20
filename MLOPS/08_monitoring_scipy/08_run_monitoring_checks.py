@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 from pathlib import Path
@@ -12,11 +12,11 @@ CURRENT_FILE = Path(__file__).resolve()
 REPO_ROOT = CURRENT_FILE.parents[2]
 MLOPS_ROOT = REPO_ROOT / "MLOPS"
 
-DATA_FILE = MLOPS_ROOT / "01_data_versioning" / "01_creditcard_dataset.csv"
-REFERENCE_FEATURES_FILE = MLOPS_ROOT / "02_feature_store" / "feature_repo" / "data" / "02_fraud_feature_source.parquet"
-MODEL_METADATA_FILE = MLOPS_ROOT / "06_model_artifacts" / "06_model_metadata.json"
-MODEL_FILE = MLOPS_ROOT / "06_model_artifacts" / "06_best_model.joblib"
-SCALER_FILE = MLOPS_ROOT / "06_model_artifacts" / "06_scaler.joblib"
+DATA_FILE = MLOPS_ROOT / "01_data_versioning_dvc" / "01_creditcard_dataset.csv"
+REFERENCE_FEATURES_FILE = MLOPS_ROOT / "02_feature_store_feast" / "feature_repo" / "data" / "02_fraud_feature_source.parquet"
+MODEL_METADATA_FILE = MLOPS_ROOT / "06_model_artifacts_joblib" / "06_model_metadata.json"
+MODEL_FILE = MLOPS_ROOT / "06_model_artifacts_joblib" / "06_best_model.joblib"
+SCALER_FILE = MLOPS_ROOT / "06_model_artifacts_joblib" / "06_scaler.joblib"
 
 OUTPUT_DIR = CURRENT_FILE.parent
 CURRENT_BATCH_FILE = OUTPUT_DIR / "08_current_scored_batch.csv"
@@ -128,3 +128,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

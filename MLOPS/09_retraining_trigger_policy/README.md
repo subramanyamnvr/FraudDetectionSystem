@@ -1,4 +1,4 @@
-# 09 Retraining Trigger
+﻿# 09 Retraining Trigger
 
 This step decides whether the model should be retrained.
 
@@ -24,7 +24,8 @@ How it fits:
 - if retraining is needed, the recommended next action is to run the Prefect pipeline again
 
 Run:
-- `python MLOPS/09_retraining_trigger/09_decide_retraining.py`
+- `python MLOPS/09_retraining_trigger_policy/09_decide_retraining.py`
 
 Output:
 - `09_retraining_decision.json` clearly says whether retraining is required and why
+

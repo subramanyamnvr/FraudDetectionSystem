@@ -1,8 +1,10 @@
-.env
-MLOPS/04_experiment_tracking/.env
-MLOPS/04_experiment_tracking/04_mlflow_tracking.db
-MLOPS/04_experiment_tracking/mlruns/
+﻿.env
+MLOPS/04_experiment_tracking_mlflow/.env
+MLOPS/04_experiment_tracking_mlflow/04_mlflow_tracking.db
+MLOPS/04_experiment_tracking_mlflow/mlruns/
 mlflow.db
 mlruns/
-MLOPS/07_model_serving/.bentoml/
-MLOPS/07_model_serving/__pycache__/
+MLOPS/07_model_serving_bentoml/.bentoml/
+MLOPS/07_model_serving_bentoml/__pycache__/
+__pycache__/
+

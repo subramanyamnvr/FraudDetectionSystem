@@ -1,0 +1,6 @@
+﻿retraining_policy:
+  max_drifted_features: 8
+  monitoring_warning_triggers_retraining: true
+  max_average_fraud_probability: 0.05
+  retraining_command: "python MLOPS/03_orchestration_prefect/03_prefect_mlops_pipeline.py"
+

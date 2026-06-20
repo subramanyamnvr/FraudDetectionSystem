@@ -1,4 +1,4 @@
-from datetime import timedelta
+﻿from datetime import timedelta
 
 from feast import Entity, FeatureService, FeatureView, Field, FileSource
 from feast.types import Float32, Int64
@@ -48,10 +48,11 @@ fraud_transaction_features = FeatureView(
     ],
     online=True,
     source=fraud_transaction_source,
-    tags={"team": "fraud-detection", "step": "02_feature_store"},
+    tags={"team": "fraud-detection", "step": "02_feature_store_feast"},
 )
 
 fraud_feature_service_v1 = FeatureService(
     name="fraud_feature_service_v1",
     features=[fraud_transaction_features],
 )
+

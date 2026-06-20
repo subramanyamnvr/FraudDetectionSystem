@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import importlib.util
 import json
@@ -27,11 +27,11 @@ REPO_ROOT = CURRENT_FILE.parents[2]
 MLOPS_ROOT = REPO_ROOT / "MLOPS"
 
 SETUP_DIR = MLOPS_ROOT / "00_project_setup"
-DATA_DIR = MLOPS_ROOT / "01_data_versioning"
-FEATURE_REPO_DIR = MLOPS_ROOT / "02_feature_store" / "feature_repo"
+DATA_DIR = MLOPS_ROOT / "01_data_versioning_dvc"
+FEATURE_REPO_DIR = MLOPS_ROOT / "02_feature_store_feast" / "feature_repo"
 FEATURE_DATA_DIR = FEATURE_REPO_DIR / "data"
-TRACKING_DIR = MLOPS_ROOT / "04_experiment_tracking"
-ARTIFACT_DIR = MLOPS_ROOT / "06_model_artifacts"
+TRACKING_DIR = MLOPS_ROOT / "04_experiment_tracking_mlflow"
+ARTIFACT_DIR = MLOPS_ROOT / "06_model_artifacts_joblib"
 
 load_dotenv(TRACKING_DIR / ".env")
 load_dotenv(REPO_ROOT / ".env", override=False)
@@ -328,3 +328,4 @@ def fraud_detection_flow() -> None:
 
 if __name__ == "__main__":
     fraud_detection_flow()
+

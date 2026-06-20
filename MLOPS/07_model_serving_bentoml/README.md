@@ -1,4 +1,4 @@
-# 07 Model Serving
+﻿# 07 Model Serving
 
 This step serves the trained model as an API with BentoML.
 
@@ -16,11 +16,12 @@ How it fits:
 - BentoML then exposes a prediction endpoint that an app or another service can call
 
 Run order:
-- `python MLOPS/07_model_serving/07_export_bentoml_model.py`
-- `bentoml serve MLOPS/07_model_serving/07_bentoml_service.py:FraudDetectionService`
+- `python MLOPS/07_model_serving_bentoml/07_export_bentoml_model.py`
+- `bentoml serve MLOPS/07_model_serving_bentoml/07_bentoml_service.py:FraudDetectionService`
 
 Useful endpoints after startup:
 - `GET /docs.json`
 - `POST /predict`
 - `GET /readyz`
 - `GET /metrics`
+

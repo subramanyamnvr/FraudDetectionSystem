@@ -8,6 +8,6 @@
   "checked_rows": 40,
   "drifted_feature_count": 19,
   "monitoring_status": "warning",
-  "recommended_command": "python MLOPS/03_orchestration/03_prefect_mlops_pipeline.py",
+  "recommended_command": "python MLOPS/03_orchestration_prefect/03_prefect_mlops_pipeline.py",
   "note": "In production, this decision can trigger a scheduled pipeline or approval workflow."
 }

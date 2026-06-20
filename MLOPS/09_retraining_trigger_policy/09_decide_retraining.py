@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 from pathlib import Path
@@ -7,7 +7,7 @@ import yaml
 
 CURRENT_FILE = Path(__file__).resolve()
 MLOPS_ROOT = CURRENT_FILE.parents[1]
-MONITORING_DIR = MLOPS_ROOT / "08_monitoring"
+MONITORING_DIR = MLOPS_ROOT / "08_monitoring_scipy"
 
 MONITORING_SUMMARY_FILE = MONITORING_DIR / "08_monitoring_summary.json"
 POLICY_FILE = CURRENT_FILE.with_name("09_retraining_policy.yaml")
@@ -70,3 +70,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

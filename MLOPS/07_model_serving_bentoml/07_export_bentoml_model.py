@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import os
@@ -11,7 +11,7 @@ import joblib
 CURRENT_FILE = Path(__file__).resolve()
 REPO_ROOT = CURRENT_FILE.parents[2]
 MLOPS_ROOT = REPO_ROOT / "MLOPS"
-ARTIFACT_DIR = MLOPS_ROOT / "06_model_artifacts"
+ARTIFACT_DIR = MLOPS_ROOT / "06_model_artifacts_joblib"
 
 MODEL_PATH = ARTIFACT_DIR / "06_best_model.joblib"
 SCALER_PATH = ARTIFACT_DIR / "06_scaler.joblib"
@@ -57,3 +57,4 @@ def export_model() -> bentoml.Tag:
 if __name__ == "__main__":
     tag = export_model()
     print(f"BentoML model saved: {tag}")
+

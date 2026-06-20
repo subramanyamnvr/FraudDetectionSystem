@@ -1,0 +1,58 @@
+schema: '2.0'
+stages:
+  run_full_mlops_cycle:
+    cmd: python ../03_orchestration_prefect/03_prefect_mlops_pipeline.py
+    deps:
+    - path: ../01_data_versioning_dvc/01_creditcard_dataset.csv
+      hash: md5
+      md5: b71aa7b4475cbb2e38b358067a7e9190
+      size: 148701764
+    - path: 
+        ../02_feature_store_feast/feature_repo/02_fraud_feature_definitions.py
+      hash: md5
+      md5: 0878f8fc3aa62706c941d6a7c349272a
+      size: 2026
+    - path: ../02_feature_store_feast/feature_repo/feature_store.yaml
+      hash: md5
+      md5: f77b67b24140e08367d2f4e9770dc9f0
+      size: 193
+    - path: ../03_orchestration_prefect/03_pipeline_params.yaml
+      hash: md5
+      md5: 7c3076c025a5f11bcb1f79b612cf5ce4
+      size: 65
+    - path: ../03_orchestration_prefect/03_prefect_mlops_pipeline.py
+      hash: md5
+      md5: 65be472ee9de3bf788b372a0da3f9999
+      size: 12832
+    params:
+      ../03_orchestration_prefect/03_pipeline_params.yaml:
+        pipeline.random_state: 42
+        pipeline.sample_size: 100
+        pipeline.test_size: 0.2
+    outs:
+    - path: 
+        ../02_feature_store_feast/feature_repo/data/02_fraud_feature_source.parquet
+      hash: md5
+      md5: 6d35fd22ff4bbc7bac59f416de5a3c5f
+      size: 44080
+    - path: 
+        ../02_feature_store_feast/feature_repo/data/02_latest_online_features.json
+      hash: md5
+      md5: 80cb586c96363d211832070fe8de6d61
+      size: 849
+    - path: ../06_model_artifacts_joblib/06_best_model.joblib
+      hash: md5
+      md5: 7a499c7433d00fdd043bf6c43d2a6fa3
+      size: 79546
+    - path: ../06_model_artifacts_joblib/06_model_metadata.json
+      hash: md5
+      md5: bc9261d242df7fcffa63460654ad001b
+      size: 2622
+    - path: ../06_model_artifacts_joblib/06_model_results.csv
+      hash: md5
+      md5: fba2a79fda27b54a7eeada4307746f14
+      size: 288
+    - path: ../06_model_artifacts_joblib/06_scaler.joblib
+      hash: md5
+      md5: 48a09ae1efdbb4c624b99f9bae381f7d
+      size: 1679

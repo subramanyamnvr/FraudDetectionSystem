@@ -1,0 +1,9 @@
+{
+  "promotion_status": "blocked",
+  "reason": "monitoring requested retraining, so promotion is blocked",
+  "tracking_uri": "sqlite:///F:/Coding/Github Portfolio/FraudRiskPaltform/MLOPS/04_experiment_tracking_mlflow/04_mlflow_tracking.db",
+  "registered_model_name": "fraud-classifier-demo",
+  "candidate_version": 11,
+  "candidate_run_id": "310f33da0f7243d88d15a6a6519047bc",
+  "requested_alias": "champion"
+}

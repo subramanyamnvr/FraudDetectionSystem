@@ -1,0 +1,4 @@
+promotion_policy:
+  alias_name: champion
+  allow_promotion_when_retraining_required: false
+  promotion_stage_note: approved_for_serving
