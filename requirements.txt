@@ -10,3 +10,7 @@ prefect
 dvc
 pyyaml
 pydantic-settings>=2.9.1
+feast
+fastapi==0.116.1
+starlette==0.47.3
+uvicorn==0.35.0
