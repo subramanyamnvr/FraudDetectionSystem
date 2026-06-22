@@ -1,0 +1,10 @@
+rollout_policy:
+  strategy_name: blue_green_with_canary
+  production_alias: champion
+  initial_environment: staging
+  canary_percentages:
+    - 10
+    - 50
+    - 100
+  require_promotion_approval: true
+  serving_platform: bentoml

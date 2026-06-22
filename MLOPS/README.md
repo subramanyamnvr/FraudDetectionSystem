@@ -61,6 +61,11 @@ This folder groups the project by MLOps lifecycle step so the flow is easy to fo
 - `11_promote_model.py` checks the retraining decision and either promotes or blocks the latest MLflow model version.
 - `11_promotion_policy.yaml` stores the alias and approval rules for promotion.
 
+## 12 Rollout Strategy
+- folder: `12_rollout_strategy_bentoml`
+- `12_prepare_rollout.py` turns the promotion result into a staged rollout plan.
+- `12_rollout_policy.yaml` stores the environment and traffic-shift rules for rollout.
+
 ## Useful Commands
 - `python MLOPS/03_orchestration_prefect/03_prefect_mlops_pipeline.py`
 - `dvc repro MLOPS/05_pipeline_versioning_dvc/dvc.yaml:run_full_mlops_cycle`
@@ -71,4 +76,5 @@ This folder groups the project by MLOps lifecycle step so the flow is easy to fo
 - `python MLOPS/08_monitoring_scipy/08_run_monitoring_checks.py`
 - `python MLOPS/09_retraining_trigger_policy/09_decide_retraining.py`
 - `python MLOPS/11_deployment_promotion_mlflow/11_promote_model.py`
+- `python MLOPS/12_rollout_strategy_bentoml/12_prepare_rollout.py`
 

@@ -39,6 +39,12 @@ jobs:
       - name: Run retraining decision
         run: python MLOPS/09_retraining_trigger_policy/09_decide_retraining.py
 
+      - name: Run deployment promotion gate
+        run: python MLOPS/11_deployment_promotion_mlflow/11_promote_model.py
+
+      - name: Prepare rollout strategy
+        run: python MLOPS/12_rollout_strategy_bentoml/12_prepare_rollout.py
+
       - name: Upload generated lifecycle artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -47,6 +53,8 @@ jobs:
             MLOPS/06_model_artifacts_joblib
             MLOPS/08_monitoring_scipy
             MLOPS/09_retraining_trigger_policy
+            MLOPS/11_deployment_promotion_mlflow
+            MLOPS/12_rollout_strategy_bentoml
 
   smoke-test-bentoml-service:
     runs-on: ubuntu-latest

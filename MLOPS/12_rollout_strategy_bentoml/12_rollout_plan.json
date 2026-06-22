@@ -1,0 +1,8 @@
+{
+  "rollout_status": "blocked",
+  "strategy_name": "blue_green_with_canary",
+  "serving_platform": "bentoml",
+  "reason": "model promotion was not approved, so rollout cannot start",
+  "source_promotion_status": "blocked",
+  "checked_at": "2026-06-21T12:32:42.159501+00:00"
+}
